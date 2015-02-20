@@ -1,0 +1,24 @@
+{
+    "name": "web-app",
+    "version": "1.0.0-SNAPSHOT",
+    "description": "web application helper",
+
+    "author": {
+        "name": "nullpointer",
+        "url": "http://null-pointer.ru/"
+    },
+
+    "repository": {
+    },
+
+    "dependencies": {
+        "fs-extra": "0.8.x",
+        "lodash": "3.*",
+
+        "nullpointer-i18n-bin": "newpointer/i18n-bin.git",
+        "nullpointer-web-bin": "newpointer/web-bin.git"
+    },
+
+    "devDependencies": {
+    }
+}
