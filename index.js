@@ -221,7 +221,7 @@ module.exports.initGrunt = function(grunt, gruntConfig) {
     });
 
     //
-    grunt.registerTask('init', ['bower']);
+    grunt.registerTask('init', ['clean:web-deps', 'bower']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
     grunt.registerTask('build', [
         'clean:target', 'clean:web-deps',
