@@ -34,7 +34,8 @@ module.exports.setBuildMeta = function(meta) {
 
     defaultGruntConfig = {
         clean: {
-            deps: ['node_modules', 'bower_components', 'external_components'],
+            'project-deps': ['node_modules'],
+            'web-deps': ['bower_components', 'external_components'],
             target: ['target'],
             dist: ['dist']
         },
@@ -222,6 +223,14 @@ module.exports.initGrunt = function(grunt, gruntConfig) {
     //
     grunt.registerTask('init', ['bower']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist']);
-    grunt.registerTask('build', ['clean:target', 'init', 'jshint', 'process-resources:external_components:false', 'process-resources:src:false', 'web-resources:build:false', 'dist']);
-    grunt.registerTask('cleanup', ['clean:deps', 'clean:target']);
+    grunt.registerTask('build', [
+        'clean:target', 'clean:web-deps',
+        'init',
+        'jshint',
+        'process-resources:external_components:false',
+        'process-resources:src:false',
+        'web-resources:build:false',
+        'dist'
+    ]);
+    grunt.registerTask('cleanup', ['clean:target', 'clean:web-deps', 'clean:project-deps']);
 };
