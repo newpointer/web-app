@@ -147,6 +147,10 @@ module.exports.setBuildMeta = function(meta) {
                             relativeUrls: true
                         },
 
+                        wrap: {
+                            start: 'var APP_BUILD_TYPE = "' + buildMeta.APP_BUILD_TYPE + '";\n'
+                        },
+
                         optimize: 'uglify2',
                         uglify2: {
                             mangle: true,
