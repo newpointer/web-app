@@ -136,6 +136,7 @@ module.exports.setBuildMeta = function(meta) {
             'build': {
                 options: {
                     propertiesFile: path.resolve(buildMeta.cwd, 'target/web-resources-build/' + buildMeta.name + '/build.properties'),
+                    buildIdPropertyName: buildMeta.appId ? (buildMeta.appId + '.build.id') : null,
                     mainFile: path.resolve(buildMeta.cwd, 'target/web-resources-build/' + buildMeta.name + '/src/' + buildMeta.name + '/main.js'),
 
                     requirejs: _.extend({}, buildMeta.main._RESOURCES_CONFIG, {

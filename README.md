@@ -49,6 +49,7 @@ _.mixin(_d);
 module.exports = function(grunt) {
     // инициализация приложения
     webapp.setBuildMeta({
+        appId: 'rsearch',
         APP_BUILD_TYPE: 'production',
         cwd: __dirname,
         name: 'nkb-app',
