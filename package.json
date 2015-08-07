@@ -15,8 +15,8 @@
         "fs-extra": "0.8.x",
         "lodash": "3.*",
 
-        "nullpointer-i18n-bin": "newpointer/i18n-bin.git",
-        "nullpointer-web-bin": "newpointer/web-bin.git"
+        "nullpointer-i18n-bin": "git+ssh://git@github.com:newpointer/i18n-bin.git",
+        "nullpointer-web-bin": "git+ssh://git@github.com:newpointer/web-bin.git"
     },
 
     "devDependencies": {
