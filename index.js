@@ -22,6 +22,8 @@ module.exports.getBuildMeta = function(path) {
 
 //
 module.exports.setBuildMeta = function(meta) {
+    console.log('***', __dirname);
+
     var main = require(path.resolve(meta.cwd, 'src/' + meta.name + '/main'));
 
     buildMeta = _.extend({}, meta, {
@@ -30,6 +32,14 @@ module.exports.setBuildMeta = function(meta) {
         buildIdReplacement: '\\${' + meta.name + '.build.id}',
         langs: main._APP_CONFIG.lang.langs,
         hash: null
+    });
+
+    // test stub
+    _.each(buildMeta.main._RESOURCES_CONFIG.packages, function(p){
+        if (p.name === 'test') {
+            p.location = 'src/' + p.location;
+            return false;
+        }
     });
 
     defaultGruntConfig = {
@@ -52,6 +62,12 @@ module.exports.setBuildMeta = function(meta) {
         },
 
         copy: {
+            'test-stub': {
+                expand: true,
+                cwd: __dirname + '/stubs/test',
+                src: '**',
+                dest: 'target/web-resources-process/src/test'
+            },
             'dist': {
                 expand: true,
                 flatten: true,
@@ -234,6 +250,7 @@ module.exports.initGrunt = function(grunt, gruntConfig) {
         'jshint',
         'process-resources:external_components:false',
         'process-resources:src:false',
+        'copy:test-stub',
         'web-resources:build:false',
         'dist'
     ]);
