@@ -22,8 +22,6 @@ module.exports.getBuildMeta = function(path) {
 
 //
 module.exports.setBuildMeta = function(meta) {
-    console.log('***', __dirname);
-
     var main = require(path.resolve(meta.cwd, 'src/' + meta.name + '/main'));
 
     buildMeta = _.extend({}, meta, {
