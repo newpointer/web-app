@@ -1,4 +1,4 @@
-# web-app
+# nullpointer-web-app
 
 Сборщик веб-приложений [nullpointer](http://null-pointer.ru/) на основе:
 
