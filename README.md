@@ -1,6 +1,9 @@
 # web-app
 
-> Сборщик веб-приложений [nullpointer](http://null-pointer.ru/)
+Сборщик веб-приложений [nullpointer](http://null-pointer.ru/) на основе:
+
+* [nullpointer-web-bin](https://github.com/newpointer/web-bin/blob/master/docs/docs.md)
+* [nullpointer-i18n](https://github.com/newpointer/i18n-bin/blob/master/src/build.md)
 
 ## Окружение
 
